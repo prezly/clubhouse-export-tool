@@ -24,11 +24,13 @@ PHP CLI tool to export all your Clubhouse data into a single JSON file
    
 3. Put Clubhouse access token into the `.env` file.
 
-   - Go to your Clubhouse dashboard.
+   - Go to your Clubhouse dashboard
+   
    - Navigate to Settings > My Account > API Tokens and generate an environment-specific token.
      See Clubhouse documentation on obtaining a token: 
      https://help.clubhouse.io/hc/en-us/articles/205701199-Clubhouse-API-Tokens
-   - Paste the token into `.env` replacing "paste-your-token-here" text.
+     
+   - Paste the token into `.env` replacing "paste-your-token-here" text
 
 ## Usage
 
