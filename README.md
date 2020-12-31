@@ -27,6 +27,7 @@ PHP CLI tool to export all your Clubhouse data into a single JSON file
    - Go to your Clubhouse dashboard
    
    - Navigate to Settings > My Account > API Tokens and generate an environment-specific token.
+     
      See Clubhouse documentation on obtaining a token: 
      https://help.clubhouse.io/hc/en-us/articles/205701199-Clubhouse-API-Tokens
      
