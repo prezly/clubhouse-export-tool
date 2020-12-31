@@ -65,7 +65,7 @@ foreach (array_values($sections) as $i => $section) {
 
     $source = $config[$section];
 
-    if (is_string($section)) {
+    if (is_string($source)) {
         $response = $http->get($source);
         echo json_encode($section), ':', $response->getBody()->getContents(), PHP_EOL;
     }
