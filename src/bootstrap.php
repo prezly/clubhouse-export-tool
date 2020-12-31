@@ -1,5 +1,6 @@
 <?php
 
+use Dotenv\Exception\ValidationException;
 use GuzzleHttp\Client;
 
 if (! is_file(__DIR__ . '/../vendor/autoload.php')) {
@@ -8,17 +9,21 @@ if (! is_file(__DIR__ . '/../vendor/autoload.php')) {
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../', '.env');
 $dotenv->load();
 
-$token = getenv('CLUBHOUSE_TOKEN');
-
-if (empty($token)) {
-    throw new LogicException('Please provide `CLUBHOUSE_TOKEN` environment variable.');
+try {
+    $dotenv->required('CLUBHOUSE_TOKEN');
+} catch (ValidationException $exception) {
+    error_log($exception->getMessage());
+    exit(1);
 }
 
+$token = $_ENV['CLUBHOUSE_TOKEN'];
+
 if ($token === 'paste-your-token-here') {
-    throw new LogicException('Please set `CLUBHOUSE_TOKEN` variable to your Clubhouse Access token in `.env` file.');
+    error_log('Please set `CLUBHOUSE_TOKEN` variable to your Clubhouse Access token in `.env` file.');
+    exit(1);
 }
 
 if (array_intersect(['help', '--help', '?'], array_slice($argv, 1))) {
