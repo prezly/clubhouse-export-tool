@@ -65,6 +65,13 @@ Supported sections:
 php export.php epics > data/epics.json
 ```
 
+## Other tools
+
+There is an official [clubhouse/exporter](https://github.com/clubhouse/exporter) package from Clubhouse, but it has a few differences:
+
+- `clubhouse/exporter` does export shortened story objects (no comments or description).
+- `clubhouse/exporter` does not export story history records.
+- `clubhouse/exporter` stores every section into a separate file. This may be okay for you, but we needed everything into a single file, so we could use [JSONata](https://jsonata.org/) to manipulate the whole dataset.
 
 -----------------
 
