@@ -20,6 +20,6 @@
     },
     "minimum-stability": "stable",
     "scripts": {
-        "post-install-cmd": "cp .env.dist .env || echo '.env file already exists'"
+        "post-install-cmd": "cp -u .env.dist .env || echo '.env file already exists'"
     }
 }
