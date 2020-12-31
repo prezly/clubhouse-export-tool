@@ -37,4 +37,4 @@ php export.php epics > data/epics.json
 
 -----------------
 
-Brought to you with :heart: by [Prezly](https://www.prezly.com/?utm_source=github&utm_campaign=slate).
+Brought to you with :heart: by [Prezly](https://www.prezly.com/?utm_source=github&utm_campaign=clubhouse-export-tool).
