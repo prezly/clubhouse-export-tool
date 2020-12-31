@@ -30,15 +30,19 @@ $config = [
             $response = $http->post('https://api.clubhouse.io/api/v3/stories/search', [
                 'json' => ['story_type' => $type],
             ]);
-            $data = Json::decode($response->getBody()->getContents());
+            $data = Json::decode($response->getBody()->getContents(), JSON::FORCE_ARRAY);
             foreach ($data as ['id' => $id]) {
+                error_log("Exporting story #{$id}");
                 /*
                  * Because the search endpoint does return shortened story objects
                  * without comments and description, we also have to iterate over all story ids
                  * and fetch full story object with a separate request for every one of them.
                 */
                 $response = $http->get("https://api.clubhouse.io/api/v3/stories/{$id}");
-                yield $response->getBody()->getContents();
+                $story = Json::decode($response->getBody()->getContents(), Json::FORCE_ARRAY);
+                $response = $http->get("https://api.clubhouse.io/api/v3/stories/{$id}/history");
+                $history = Json::decode($response->getBody()->getContents(), Json::FORCE_ARRAY);
+                yield Json::encode(array_merge($story, ['history' => $history]));
             }
         }
     },
