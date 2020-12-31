@@ -1,4 +1,4 @@
-# Clubhouse JSON export tool
+# Clubhouse JSON Export Tool
 
 PHP CLI tool to export all your Clubhouse data into a single JSON file
 
