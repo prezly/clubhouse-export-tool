@@ -1,0 +1,25 @@
+{
+    "name": "prezly/clubhouse-export-tool",
+    "description": "Export Clubhouse Data to JSON",
+    "type": "project",
+    "require": {
+        "ext-json": "^7.4",
+        "guzzlehttp/guzzle": "^7.2",
+        "nette/utils": "^3.2",
+        "vlucas/phpdotenv": "^5.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Voskoboinyk",
+            "email": "ivan@prezly.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "scripts": {
+        "post-install-cmd": "cp .env.dist .env || echo '.env file already exists'"
+    }
+}
