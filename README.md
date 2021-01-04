@@ -5,7 +5,6 @@ PHP CLI tool to export all your Clubhouse data into a single JSON file
 ## Requirements
 
 - PHP 7.3+
-- JSON extension
 - Composer
 
 ## Getting started
