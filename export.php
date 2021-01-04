@@ -112,7 +112,7 @@ $config = [
         }
     },
     'teams'            => 'https://api.clubhouse.io/api/v3/teams',
-    'workflows'        => 'https://api.clubhouse.io/api/v3/teams',
+    'workflows'        => 'https://api.clubhouse.io/api/v3/workflows',
 ];
 
 $sections = array_slice($argv, 1) ?: array_keys($config);
